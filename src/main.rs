@@ -22,7 +22,7 @@ async fn main() -> std::io::Result<()> {
 		App::new()
 			.service(index)
 			// Это чтобы сервер грузил стили из папки static НЕТРОГАТЬ!!!!
-			.service(Files::new("/static", "./static").show_files_listing())
+			.service(Files::new("/", "./static").show_files_listing())
 	})
 	.bind((ip_addr, port))?
 	.workers(2)
